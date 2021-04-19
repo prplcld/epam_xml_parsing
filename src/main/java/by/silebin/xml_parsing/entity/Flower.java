@@ -1,7 +1,11 @@
 package by.silebin.xml_parsing.entity;
 
+import java.time.YearMonth;
+
 public class Flower {
 
+    protected FlowerType flowerType;
+    private String id;
     private String name;
     private Soil soil;
     private Origin origin;
@@ -12,114 +16,114 @@ public class Flower {
     private boolean photophilous;
     private int watering;
     private Multiplying multiplying;
+    private YearMonth plantDate;
 
-    private Flower() {
+    public Flower() {
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Soil getSoil() {
         return soil;
+    }
+
+    public void setSoil(Soil soil) {
+        this.soil = soil;
     }
 
     public Origin getOrigin() {
         return origin;
     }
 
+    public void setOrigin(Origin origin) {
+        this.origin = origin;
+    }
+
     public String getStemColor() {
         return stemColor;
+    }
+
+    public void setStemColor(String stemColor) {
+        this.stemColor = stemColor;
     }
 
     public String getLeavesColor() {
         return leavesColor;
     }
 
+    public void setLeavesColor(String leavesColor) {
+        this.leavesColor = leavesColor;
+    }
+
     public double getAverageSize() {
         return averageSize;
+    }
+
+    public void setAverageSize(double averageSize) {
+        this.averageSize = averageSize;
     }
 
     public int getTemperature() {
         return temperature;
     }
 
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
     public boolean isPhotophilous() {
         return photophilous;
+    }
+
+    public void setPhotophilous(boolean photophilous) {
+        this.photophilous = photophilous;
     }
 
     public int getWatering() {
         return watering;
     }
 
+    public void setWatering(int watering) {
+        this.watering = watering;
+    }
+
     public Multiplying getMultiplying() {
         return multiplying;
     }
 
-    public static FlowerBuilder newBuilder(){
-        return new Flower().new FlowerBuilder();
+    public void setMultiplying(Multiplying multiplying) {
+        this.multiplying = multiplying;
     }
 
-    public class FlowerBuilder {
+    public FlowerType getFlowerType() {
+        return flowerType;
+    }
 
-        private FlowerBuilder() {
+    public void setFlowerType(FlowerType flowerType) {
+        this.flowerType = flowerType;
+    }
 
-        }
+    public YearMonth getPlantDate() {
+        return plantDate;
+    }
 
-        public FlowerBuilder setName(String name){
-            Flower.this.name = name;
-            return this;
-        }
-
-        public FlowerBuilder setSoil(Soil soil){
-            Flower.this.soil = soil;
-            return this;
-        }
-
-        public FlowerBuilder setOrigin(Origin origin){
-            Flower.this.origin = origin;
-            return this;
-        }
-
-        public FlowerBuilder setStemColor(String color){
-            Flower.this.stemColor = color;
-            return this;
-        }
-
-        public FlowerBuilder setLeavesColor(String color){
-            Flower.this.leavesColor = color;
-            return this;
-        }
-
-        public FlowerBuilder setMultiplying(Multiplying multiplying){
-            Flower.this.multiplying = multiplying;
-            return this;
-        }
-
-        public FlowerBuilder setAverageSize(double size){
-            Flower.this.averageSize = size;
-            return this;
-        }
-
-        public FlowerBuilder setTemperature(int temperature){
-            Flower.this.temperature = temperature;
-            return this;
-        }
-
-        public FlowerBuilder setPhotophilous(boolean photophilous){
-            Flower.this.photophilous = photophilous;
-            return this;
-        }
-
-        public FlowerBuilder setWatering(int watering){
-            Flower.this.watering = watering;
-            return this;
-        }
-
-        public Flower build(){
-            return Flower.this;
-        }
+    public void setPlantDate(YearMonth plantDate) {
+        this.plantDate = plantDate;
     }
 }
 

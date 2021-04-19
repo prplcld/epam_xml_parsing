@@ -1,17 +1,20 @@
 package by.silebin;
 
+import by.silebin.xml_parsing.builder.AbstractFlowerBuilder;
+import by.silebin.xml_parsing.builder.DomFlowerBuilder;
+import by.silebin.xml_parsing.builder.SaxFlowerBuilder;
+import by.silebin.xml_parsing.builder.StaxFlowerBuilder;
 import by.silebin.xml_parsing.entity.Flower;
-import by.silebin.xml_parsing.parser.Parser;
-import by.silebin.xml_parsing.parser.exception.SaxParserException;
-import by.silebin.xml_parsing.parser.impl.DomParser;
-import by.silebin.xml_parsing.parser.impl.SaxParser;
+import by.silebin.xml_parsing.validator.FlowerXmlValidator;
 
-public class App 
+public class App
 {
-    public static void main( String[] args ) throws SaxParserException {
-        Parser parser = new SaxParser();
-        for(Flower f :parser.parse(ClassLoader.getSystemClassLoader().getResourceAsStream("xml/example.xml"))){
-            System.out.println(f.getOrigin().toString());
+    public static void main( String[] args ) {
+        AbstractFlowerBuilder abstractFlowerBuilder = new StaxFlowerBuilder();
+        abstractFlowerBuilder.buildFlowers(ClassLoader.getSystemClassLoader().getResourceAsStream("xml/example.xml"));
+        for (Flower f : abstractFlowerBuilder.getFlowers()){
+            System.out.println(f.getId());
         }
+        System.out.println(FlowerXmlValidator.isValidXml("xml/example.xml"));
     }
 }

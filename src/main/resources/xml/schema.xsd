@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/flowers"
+        xmlns:tns="http://www.example.org/flowers"
+        elementFormDefault="qualified">
+
+    <element name="flowers">
+        <complexType>
+            <sequence>
+                <element ref="tns:flower" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="flower">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="soil" type="tns:soil"/>
+            <element name="origin" type="tns:origin"/>
+            <element name="stem-color" type="string"/>
+            <element name="leaves-color" type="string"/>
+            <element name="average-size" type="double"/>
+            <element name="temperature" type="int"/>
+            <element name="photophilous" type="boolean"/>
+            <element name="watering" type="int"/>
+            <element name="multiplying" type="tns:multiplying"/>
+            <element name="date-planted" type="gYearMonth"/>
+        </sequence>
+        <attribute name="id" type="tns:ID" use="required"/>
+        <attribute name="kek" type="string" use="optional" default="123"/>
+    </complexType>
+
+    <simpleType name="ID">
+        <restriction base="ID">
+            <pattern value="id-\d+" />
+        </restriction>
+    </simpleType>
+
+    <complexType name="greenhouse-flower">
+        <complexContent>
+            <extension base="tns:flower">
+                <sequence>
+                    <element name="humidity" type="tns:humidity"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="open-ground-flower">
+        <complexContent>
+            <extension base="tns:flower">
+                <sequence>
+                    <element name="lifespan" type="tns:lifespan"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="origin">
+        <restriction base="string">
+            <enumeration value="North America"/>
+            <enumeration value="South America"/>
+            <enumeration value="Europe"/>
+            <enumeration value="Australia"/>
+            <enumeration value="Asia"/>
+            <enumeration value="Africa"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="soil">
+        <restriction base="string">
+            <enumeration value="podzolic"/>
+            <enumeration value="sod-podzolic"/>
+            <enumeration value="ground"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="multiplying">
+        <restriction base="string">
+            <enumeration value="leaves"/>
+            <enumeration value="stalk"/>
+            <enumeration value="seed"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="lifespan">
+        <restriction base="string">
+            <enumeration value="annual"/>
+            <enumeration value="biennial"/>
+            <enumeration value="perennial"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="humidity">
+        <restriction base="unsignedInt">
+            <minInclusive value="0"/>
+            <maxExclusive value="100"/>
+        </restriction>
+    </simpleType>
+
+    <element name="flower" type="tns:flower" abstract="true"/>
+    <element name="greenhouse-flower" type="tns:greenhouse-flower" substitutionGroup="tns:flower"/>
+    <element name="open-ground-flower" type="tns:open-ground-flower" substitutionGroup="tns:flower"/>
+</schema>

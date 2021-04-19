@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://www.w3schools.com/flowers">
-    <flower name="123">
+         xmlns="http://www.example.org/flowers"
+         xsi:schemaLocation="http://www.example.org/flowers ../schema.xsd">
+
+    <greenhouse-flower id="id-1">
+        <name>flower1</name>
         <soil>podzolic</soil>
         <origin>Asia</origin>
-        <visualParameters>
-            <stemColor>blue</stemColor>
-            <leavesColor>blue</leavesColor>
-            <averageSize>12</averageSize>
-        </visualParameters>
-        <growingTips>
-            <temperature>12</temperature>
-            <photophilous>true</photophilous>
-            <watering>12</watering>
-        </growingTips>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>12</average-size>
+        <temperature>12</temperature>
+        <photophilous>true</photophilous>
+        <watering>12</watering>
         <multiplying>leaves</multiplying>
-    </flower>
-    <flower name="123">
+        <date-planted>2019-10</date-planted>
+        <humidity>10</humidity>
+    </greenhouse-flower>
+
+    <open-ground-flower id="id-2">
+        <name>flower2</name>
         <soil>podzolic</soil>
-        <origin>Asia</origin>
-        <visualParameters>
-            <stemColor>blue</stemColor>
-            <leavesColor>blue</leavesColor>
-            <averageSize>12</averageSize>
-        </visualParameters>
-        <growingTips>
-            <temperature>12</temperature>
-            <photophilous>true</photophilous>
-            <watering>12</watering>
-        </growingTips>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>11</average-size>
+        <temperature>11</temperature>
+        <photophilous>false</photophilous>
+        <watering>11</watering>
         <multiplying>leaves</multiplying>
-    </flower>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
 </flowers>
