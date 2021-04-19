@@ -4,6 +4,8 @@ import java.time.YearMonth;
 
 public class Flower {
 
+    private static final int DEFAULT_AMOUNT = 1;
+
     protected FlowerType flowerType;
     private String id;
     private String name;
@@ -17,9 +19,39 @@ public class Flower {
     private int watering;
     private Multiplying multiplying;
     private YearMonth plantDate;
+    private int amount = DEFAULT_AMOUNT;
 
     public Flower() {
 
+    }
+
+    public Flower(FlowerType flowerType,
+                  String id, String name,
+                  Soil soil, Origin origin,
+                  String stemColor,
+                  String leavesColor,
+                  double averageSize,
+                  int temperature,
+                  boolean photophilous,
+                  int watering,
+                  Multiplying multiplying,
+                  YearMonth plantDate,
+                  int amount) {
+
+        this.flowerType = flowerType;
+        this.id = id;
+        this.name = name;
+        this.soil = soil;
+        this.origin = origin;
+        this.stemColor = stemColor;
+        this.leavesColor = leavesColor;
+        this.averageSize = averageSize;
+        this.temperature = temperature;
+        this.photophilous = photophilous;
+        this.watering = watering;
+        this.multiplying = multiplying;
+        this.plantDate = plantDate;
+        this.amount = amount;
     }
 
     public String getId() {
@@ -124,6 +156,70 @@ public class Flower {
 
     public void setPlantDate(YearMonth plantDate) {
         this.plantDate = plantDate;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flower flower = (Flower) o;
+        return Double.compare(flower.averageSize, averageSize) == 0 &&
+                temperature == flower.temperature &&
+                photophilous == flower.photophilous &&
+                watering == flower.watering &&
+                amount == flower.amount &&
+                flowerType == flower.flowerType &&
+                id.equals(flower.id) &&
+                name.equals(flower.name) &&
+                soil == flower.soil &&
+                origin == flower.origin &&
+                stemColor.equals(flower.stemColor) &&
+                leavesColor.equals(flower.leavesColor) &&
+                multiplying == flower.multiplying &&
+                plantDate.equals(flower.plantDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result += id == null ? 0 : id.hashCode();
+        result += name == null ? 0 : name.hashCode();
+        result += stemColor == null ? 0 : stemColor.hashCode();
+        result += leavesColor == null ? 0 : leavesColor.hashCode();
+        result += Double.hashCode(averageSize);
+        result += Integer.hashCode(temperature);
+        result += Boolean.hashCode(photophilous);
+        result += Integer.hashCode(watering);
+        result += Integer.hashCode(amount);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Flower{" +
+                "flowerType=" + flowerType +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", soil=" + soil +
+                ", origin=" + origin +
+                ", stemColor='" + stemColor + '\'' +
+                ", leavesColor='" + leavesColor + '\'' +
+                ", averageSize=" + averageSize +
+                ", temperature=" + temperature +
+                ", photophilous=" + photophilous +
+                ", watering=" + watering +
+                ", multiplying=" + multiplying +
+                ", plantDate=" + plantDate +
+                ", amount=" + amount +
+                '}';
     }
 }
 

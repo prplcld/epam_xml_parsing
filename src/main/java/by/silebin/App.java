@@ -10,11 +10,10 @@ import by.silebin.xml_parsing.validator.FlowerXmlValidator;
 public class App
 {
     public static void main( String[] args ) {
-        AbstractFlowerBuilder abstractFlowerBuilder = new StaxFlowerBuilder();
+        AbstractFlowerBuilder abstractFlowerBuilder = new DomFlowerBuilder();
         abstractFlowerBuilder.buildFlowers(ClassLoader.getSystemClassLoader().getResourceAsStream("xml/example.xml"));
         for (Flower f : abstractFlowerBuilder.getFlowers()){
             System.out.println(f.getId());
         }
-        System.out.println(FlowerXmlValidator.isValidXml("xml/example.xml"));
     }
 }

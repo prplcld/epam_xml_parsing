@@ -69,6 +69,7 @@ public class DomFlowerBuilder extends AbstractFlowerBuilder {
         int watering = Integer.parseInt(getTagContent(element, FlowerTags.WATERING));
         Multiplying multiplying = Multiplying.get(getTagContent(element, FlowerTags.MULTIPLYING));
         YearMonth yearMonth = YearMonth.parse(getTagContent(element, FlowerTags.DATE_PLANTED));
+        String amount = element.getAttribute(FlowerTags.AMOUNT);
 
         Flower flower;
 
@@ -90,6 +91,10 @@ public class DomFlowerBuilder extends AbstractFlowerBuilder {
         }
 
         flower.setId(id);
+        if (amount != null && !amount.isBlank()){
+            flower.setAmount(Integer.parseInt(amount));
+        }
+
         flower.setName(name);
         flower.setSoil(soil);
         flower.setOrigin(origin);

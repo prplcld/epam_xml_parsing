@@ -17,4 +17,5 @@ public class FlowerTags {
     public static final String DATE_PLANTED = "date-planted";
     public static final String HUMIDITY = "humidity";
     public static final String LIFESPAN = "lifespan";
+    public static final String AMOUNT = "amount";
 }

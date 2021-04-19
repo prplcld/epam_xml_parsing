@@ -18,6 +18,7 @@ public class SaxFlowerBuilder extends AbstractFlowerBuilder {
 
     public static final Logger LOGGER = LogManager.getLogger(SaxFlowerBuilder.class.getName());
 
+
     @Override
     public void buildFlowers(InputStream inputStream) {
 
@@ -36,6 +37,7 @@ public class SaxFlowerBuilder extends AbstractFlowerBuilder {
 
         private StringBuilder elementValue;
         private Flower flower;
+        private String amount = "";
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
@@ -43,10 +45,18 @@ public class SaxFlowerBuilder extends AbstractFlowerBuilder {
                 case FlowerTags.GREENHOUSE_FLOWER:
                     flower = new GreenHouseFlower();
                     flower.setId(attributes.getValue(FlowerTags.ID));
+                    amount = attributes.getValue(FlowerTags.AMOUNT);
+                    if(amount != null &&!amount.isBlank()){
+                        flower.setAmount(Integer.parseInt(amount));
+                    }
                     break;
                 case FlowerTags.OPEN_GROUND_FLOWER:
                     flower = new OpenGroundFlower();
                     flower.setId(attributes.getValue(FlowerTags.ID));
+                    amount = attributes.getValue(FlowerTags.AMOUNT);
+                    if(amount != null && !amount.isBlank()){
+                        flower.setAmount(Integer.parseInt(amount));
+                    }
                     break;
                 default:
                     elementValue = new StringBuilder();
@@ -56,13 +66,10 @@ public class SaxFlowerBuilder extends AbstractFlowerBuilder {
 
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
-            switch (qName){
+            switch (qName) {
                 case FlowerTags.GREENHOUSE_FLOWER:
                 case FlowerTags.OPEN_GROUND_FLOWER:
                     flowers.add(flower);
-                    break;
-                case FlowerTags.ID :
-                    flower.setId(elementValue.toString());
                     break;
                 case FlowerTags.NAME:
                     flower.setName(elementValue.toString());

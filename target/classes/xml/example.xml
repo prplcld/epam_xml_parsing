@@ -3,23 +3,159 @@
          xmlns="http://www.example.org/flowers"
          xsi:schemaLocation="http://www.example.org/flowers ../schema.xsd">
 
-    <greenhouse-flower id="id-1">
+    <greenhouse-flower id="id-1" amount="2">
         <name>flower1</name>
         <soil>podzolic</soil>
         <origin>Asia</origin>
         <stem-color>blue</stem-color>
         <leaves-color>blue</leaves-color>
-        <average-size>12</average-size>
-        <temperature>12</temperature>
+        <average-size>1.0</average-size>
+        <temperature>1</temperature>
         <photophilous>true</photophilous>
-        <watering>12</watering>
+        <watering>1</watering>
         <multiplying>leaves</multiplying>
         <date-planted>2019-10</date-planted>
-        <humidity>10</humidity>
+        <humidity>1</humidity>
     </greenhouse-flower>
 
-    <open-ground-flower id="id-2">
+    <greenhouse-flower id="id-2">
         <name>flower2</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>2.0</average-size>
+        <temperature>2</temperature>
+        <photophilous>true</photophilous>
+        <watering>2</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>2</humidity>
+    </greenhouse-flower>
+
+    <greenhouse-flower id="id-3" amount="2">
+        <name>flower3</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>3</average-size>
+        <temperature>3</temperature>
+        <photophilous>true</photophilous>
+        <watering>3</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>3</humidity>
+    </greenhouse-flower>
+
+    <greenhouse-flower id="id-4">
+        <name>flower4</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>4.0</average-size>
+        <temperature>4</temperature>
+        <photophilous>true</photophilous>
+        <watering>4</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>4</humidity>
+    </greenhouse-flower>
+
+
+    <greenhouse-flower id="id-5" amount="2">
+        <name>flower5</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>5.0</average-size>
+        <temperature>5</temperature>
+        <photophilous>true</photophilous>
+        <watering>5</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>5</humidity>
+    </greenhouse-flower>
+
+    <greenhouse-flower id="id-6">
+        <name>flower6</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>6.0</average-size>
+        <temperature>6</temperature>
+        <photophilous>true</photophilous>
+        <watering>6</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>6</humidity>
+    </greenhouse-flower>
+
+    <greenhouse-flower id="id-7" amount="2">
+        <name>flower7</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>7.0</average-size>
+        <temperature>7</temperature>
+        <photophilous>true</photophilous>
+        <watering>7</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>7</humidity>
+    </greenhouse-flower>
+
+    <greenhouse-flower id="id-8">
+        <name>flower8</name>
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>8.0</average-size>
+        <temperature>8</temperature>
+        <photophilous>true</photophilous>
+        <watering>8</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>8</humidity>
+    </greenhouse-flower>
+
+    <open-ground-flower id="id-9" amount="2">
+        <name>flower9</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>9.0</average-size>
+        <temperature>9</temperature>
+        <photophilous>false</photophilous>
+        <watering>9</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-10">
+        <name>flower10</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>10.0</average-size>
+        <temperature>10</temperature>
+        <photophilous>false</photophilous>
+        <watering>10</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-11" amount="2">
+        <name>flower11</name>
         <soil>podzolic</soil>
         <origin>Europe</origin>
         <stem-color>green</stem-color>
@@ -28,6 +164,81 @@
         <temperature>11</temperature>
         <photophilous>false</photophilous>
         <watering>11</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-12">
+        <name>flower12</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>12.0</average-size>
+        <temperature>12</temperature>
+        <photophilous>false</photophilous>
+        <watering>12</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-13" amount="2">
+        <name>flower13</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>13.0</average-size>
+        <temperature>13</temperature>
+        <photophilous>false</photophilous>
+        <watering>13</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-14">
+        <name>flower14</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>14.0</average-size>
+        <temperature>14</temperature>
+        <photophilous>false</photophilous>
+        <watering>14</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-15" amount="2">
+        <name>flower15</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>15.0</average-size>
+        <temperature>15</temperature>
+        <photophilous>false</photophilous>
+        <watering>15</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+
+    <open-ground-flower id="id-16">
+        <name>flower16</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>16.0</average-size>
+        <temperature>16</temperature>
+        <photophilous>false</photophilous>
+        <watering>16</watering>
         <multiplying>leaves</multiplying>
         <date-planted>2019-10</date-planted>
         <lifespan>annual</lifespan>

@@ -27,7 +27,7 @@
             <element name="date-planted" type="gYearMonth"/>
         </sequence>
         <attribute name="id" type="tns:ID" use="required"/>
-        <attribute name="kek" type="string" use="optional" default="123"/>
+        <attribute name="amount" type="int" use="optional" default="1"/>
     </complexType>
 
     <simpleType name="ID">

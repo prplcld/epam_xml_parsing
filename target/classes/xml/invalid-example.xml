@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.org/flowers"
+         xsi:schemaLocation="http://www.example.org/flowers ../schema.xsd">
+
+
+    <greenhouse-flower id="id-1">
+        <soil>podzolic</soil>
+        <origin>Asia</origin>
+        <stem-color>blue</stem-color>
+        <leaves-color>blue</leaves-color>
+        <average-size>1.0</average-size>
+        <temperature>1</temperature>
+        <photophilous>true</photophilous>
+        <watering>1</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <humidity>1</humidity>
+    </greenhouse-flower>
+
+    <open-ground-flower id="id-16">
+        <name>flower16</name>
+        <soil>podzolic</soil>
+        <origin>Europe</origin>
+        <stem-color>green</stem-color>
+        <leaves-color>green</leaves-color>
+        <average-size>16.0</average-size>
+        <temperature>16</temperature>
+        <photophilous>false</photophilous>
+        <watering>16</watering>
+        <multiplying>leaves</multiplying>
+        <date-planted>2019-10</date-planted>
+        <lifespan>annual</lifespan>
+    </open-ground-flower>
+</flowers>

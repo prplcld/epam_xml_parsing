@@ -9,10 +9,7 @@ import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.Characters;
-import javax.xml.stream.events.EndElement;
-import javax.xml.stream.events.StartElement;
-import javax.xml.stream.events.XMLEvent;
+import javax.xml.stream.events.*;
 import java.io.InputStream;
 import java.time.YearMonth;
 
@@ -21,7 +18,8 @@ public class StaxFlowerBuilder extends AbstractFlowerBuilder {
     private static final Logger LOGGER = LogManager.getLogger(StaxFlowerBuilder.class.getName());
 
     private Flower flower;
-    StringBuilder elementValue;
+    private StringBuilder elementValue;
+    private Attribute amount;
 
     @Override
     public void buildFlowers(InputStream inputStream) {
@@ -43,10 +41,18 @@ public class StaxFlowerBuilder extends AbstractFlowerBuilder {
                                 flower = new GreenHouseFlower();
 
                                 flower.setId(startElement.getAttributeByName(QName.valueOf(FlowerTags.ID)).getValue());
+                                amount = startElement.getAttributeByName(QName.valueOf(FlowerTags.AMOUNT));
+                                if(amount != null && amount.isSpecified()){
+                                    flower.setAmount(Integer.parseInt(amount.getValue()));
+                                }
                                 break;
                             case FlowerTags.OPEN_GROUND_FLOWER:
                                 flower = new OpenGroundFlower();
                                 flower.setId(startElement.getAttributeByName(QName.valueOf(FlowerTags.ID)).getValue());
+                                amount = startElement.getAttributeByName(QName.valueOf(FlowerTags.AMOUNT));
+                                if(amount != null && amount.isSpecified()){
+                                    flower.setAmount(Integer.parseInt(amount.getValue()));
+                                }
                                 break;
                             default:
                                 elementValue = new StringBuilder();
@@ -69,9 +75,6 @@ public class StaxFlowerBuilder extends AbstractFlowerBuilder {
                             case FlowerTags.GREENHOUSE_FLOWER:
                             case FlowerTags.OPEN_GROUND_FLOWER:
                                 flowers.add(flower);
-                                break;
-                            case FlowerTags.ID:
-                                flower.setId(elementValue.toString());
                                 break;
                             case FlowerTags.NAME:
                                 flower.setName(elementValue.toString());

@@ -1,0 +1,3 @@
+2021-04-19_21-20-27 INFO Parsing xml file using DOM parser
+2021-04-19_21-20-27 INFO Parsing xml file using SAX parser
+2021-04-19_21-20-27 ERROR java.io.IOException: Stream closed

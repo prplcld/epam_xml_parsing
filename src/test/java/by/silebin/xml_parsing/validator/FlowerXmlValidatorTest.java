@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class FlowerXmlValidatorTest {
 
     private static final String VALID_XML_PATH = "xml/example.xml";
-    private static final String INVALID_XML_PATH = "";
+    private static final String INVALID_XML_PATH = "xml/invalid-example.xml";
 
     @Test
     public void testIsValidXml_validXml(){
